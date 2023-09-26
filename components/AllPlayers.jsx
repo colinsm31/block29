@@ -6,7 +6,7 @@ export default function AllPlayers({players}){
 
   return(
     <>
-      <h1>AllPlayers Component</h1>
+      <h1>Puppy List</h1>
       <div>
         {
           players.map((player) => {

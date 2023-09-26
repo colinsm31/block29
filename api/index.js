@@ -25,3 +25,15 @@ export async function newPup(name, breed){
     console.error(error);
   }
 }
+
+export async function deletePup(id){
+  try{
+    const response = await fetch(`${url}/players/${id}`,{
+      method: 'DELETE',
+    });
+    const result = await response.json();
+    return result;
+  } catch(error){
+    console.error(error);
+  }
+}
