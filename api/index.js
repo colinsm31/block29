@@ -1,14 +1,15 @@
-const url = 'https://fsa-puppy-bowl.herokuapp.com/api/2306-FTB-ET-WEB-PT';
+const url = 'https://fsa-puppy-bowl.herokuapp.com/api';
+const classSection = '2306-FTB-ET-WEB-PT';
 
 export async function fetchPlayers(){
-  const response = await fetch(`${url}/players`);
+  const response = await fetch(`${url}/${classSection}/players`);
   const result = await response.json();
   console.log(result);
 
   return result.data.players;
 }
 
-export async function newPup(name, breed){
+export async function newPup(name, breed, status, id){
   try{
     const response = await fetch(`${url}/players`,
     {
@@ -16,7 +17,7 @@ export async function newPup(name, breed){
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({name, breed}),
+      body: JSON.stringify({name, breed, status, id}),
     });
     const result = await response.json();
 

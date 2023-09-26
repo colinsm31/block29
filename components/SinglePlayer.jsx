@@ -3,7 +3,7 @@ import { deletePup } from "../api";
 
 export default function SinglePlayer({players}){
   const {playerId} = useParams();
-  const matchedPlayer = players.find((player) => {
+  const selectedPlayer = players.find((player) => {
     return player.id == playerId;
   });
 
@@ -21,11 +21,11 @@ export default function SinglePlayer({players}){
 
   return(
     <>
-      <h1>{matchedPlayer.name}</h1>
-      <h1>{matchedPlayer.breed}</h1>
-      <h1>{matchedPlayer.status}</h1>
-      <img src={matchedPlayer.imageUrl} alt={matchedPlayer.name} />
-      <h1>{matchedPlayer.teamId}</h1>
+      <h1>{selectedPlayer.name}</h1>
+      <h3>{selectedPlayer.breed}</h3>
+      <h3>{selectedPlayer.status}</h3>
+      <img src={selectedPlayer.imageUrl} alt={selectedPlayer.name} />
+      <h3>{selectedPlayer.teamId}</h3>
       <button onClick={deletePlayer}>Delete Puppy</button>
     </>
     
