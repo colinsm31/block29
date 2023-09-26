@@ -30,7 +30,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<AllPlayers players={players}/>} />
-          <Route path="/players/:playerid" element={<SinglePlayer/>} />
+          <Route path="/players/:playerId" element={<SinglePlayer players={players}/>} />
           <Route path="/newplayerform" element={<NewPlayerForm/>} />       
         </Routes>
       </div>

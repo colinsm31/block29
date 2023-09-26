@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AllPlayers({players}){
+  const nav = useNavigate();
 
   return(
     <>
@@ -9,9 +11,17 @@ export default function AllPlayers({players}){
         {
           players.map((player) => {
             return(
-              <div key={player.id}>
-                <h3>{player.name}</h3>
-              </div>
+              <>
+                <div key={player.id}>
+                  <h3>{player.name}</h3>
+                </div>
+                <button
+                key={player.id}
+                onClick={() => nav(`players/${player.id}`)}
+                >
+                See Details
+                </button>
+              </>
             )
           })
         }
