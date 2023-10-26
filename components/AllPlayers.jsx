@@ -16,8 +16,8 @@ export default function AllPlayers({players}){
                   <h3>{player.name}</h3>
                 </div>
                 <button
-                key={player.id}
-                onClick={() => nav(`players/${player.id}`)}
+                  key={player.id}
+                  onClick={() => nav(`players/${player.id}`)}
                 >
                 See Details
                 </button>

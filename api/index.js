@@ -9,15 +9,15 @@ export async function fetchPlayers(){
   return result.data.players;
 }
 
-export async function newPup(name, breed, status, id){
+export async function newPup(name, breed){
   try{
-    const response = await fetch(`${url}/players`,
+    const response = await fetch(`${url}/${classSection}/players`,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({name, breed, status, id}),
+      body: JSON.stringify({name, breed}),
     });
     const result = await response.json();
 
